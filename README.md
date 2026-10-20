@@ -18,7 +18,7 @@ A Codex skill for ongoing math tutoring: resume from local records, learn in sma
 
 **读取档案 → 接未答题或短复习 → 讲一个小点 → 等你作答 → 反馈与提示 → 订正 → 新题复测 → 保存进度**
 
-- **衔接进度：** 从未完成题目和到期复习继续，不在技能里写死某天的进度。
+- **衔接进度：** 保存最后的追问、已答部分和待补部分，从未完成题目和到期复习继续。
 - **拆小讲解：** 没看懂就拆步骤；可以指定一道题或截图作为例子。
 - **调整题量：** 熟悉内容可约 8 题一批，新内容通常先 2～3 题，订正可只问一个关键点。
 - **理解日常输入：** 接受“平方、根号、乘”等表达，以及只补一个系数或缺项的回答；影响判断的歧义会先澄清。
@@ -100,10 +100,12 @@ $math-study-coach 继续学习，先接上次未完成的题，再检查到期�
 
 | 文件 | 内容 |
 | --- | --- |
-| `学习档案.md` | 学习目标、偏好、当前进度和未完成题目 |
+| `学习档案.md` | 学习目标、偏好、当前进度、最后追问及已答与待补部分 |
 | `知识库.md` | 知识点、掌握状态、证据和复习安排 |
 | `错题本.md` | 原始错误、提示订正及后续复测 |
 | `学习日志.md` | 按时间记录的题目、真实作答和反馈 |
+
+已有档案沿用原编号和引用关系；首次建档且尚无编号约定时，才默认使用 `MA` 前缀。针对同一道题的追问沿用原题号。
 
 “已掌握”默认需要多个非重复新题及跨日表现支持；这是可调整的教学约定。某题答对可以继续推进，不必为了等状态升级而原地重复。
 
@@ -123,7 +125,7 @@ It tracks what the learner actually demonstrates, distinguishing independent ans
 
 **Read records → Resume a question or review → Explain one concept → Wait for your answer → Give feedback and hints → Correct → Try fresh questions → Save progress**
 
-- **Resume reliably:** Continue from unfinished work and reviews due, using the latest records.
+- **Resume reliably:** Save the exact follow-up question, answered parts, and remaining parts to continue unfinished work and reviews due.
 - **Explain in small steps:** Reuse a question or screenshot you provide and break down confusing steps.
 - **Adjust the batch size:** Around eight familiar questions, two or three new or complex questions, or one correction at a time, depending on your preference.
 - **Accept everyday notation:** Understand expressions such as “x squared,” Chinese math terms, and partial corrections; clarify ambiguities that affect grading.
@@ -208,10 +210,12 @@ The skill maintains four Markdown files in the authorized study folder:
 
 | Filename | Purpose |
 | --- | --- |
-| `学习档案.md` | Learner goals, preferences, current progress, and pending questions |
+| `学习档案.md` | Learner goals, preferences, current progress, the latest follow-up question, and answered and remaining parts |
 | `知识库.md` | Concepts, mastery status, supporting evidence, and review schedule |
 | `错题本.md` | Original mistakes, corrections with hints, and later retests |
 | `学习日志.md` | A chronological record of questions, actual answers, and feedback |
+
+Existing records keep their identifiers and references. The `MA` prefix is only the default for a new set of records without an established numbering convention. Follow-up questions about the same problem retain its original question ID.
 
 The default mastery check uses several distinct new questions and performance across study dates. It is an adjustable teaching convention. You can move on after sufficient successful practice while later review remains scheduled.
 
