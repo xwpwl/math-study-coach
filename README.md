@@ -138,6 +138,12 @@ It tracks what the learner actually demonstrates, distinguishing independent ans
 
 **The default teaching language is Simplified Chinese.** To study in English, explicitly request English in your prompt. The four canonical record filenames remain in Chinese.
 
+### Why I made this
+
+This is more than a skill. It grew out of something I experienced firsthand: **having gaps in your foundational knowledge does not mean you cannot learn. With a learning approach that works for you, understanding math and solving problems can be a joy.**
+
+For learners who are willing to think for themselves but often get stuck on a step in a textbook, with no one available to explain it when they need help, this approach may offer practical support—**not by solving problems for them, but by helping them move past the point where they are stuck.**
+
 ### Learning workflow
 
 **Read records → Resume a question or review → Explain one concept → Wait for your answer → Give feedback and hints → Correct → Try fresh questions → Save progress**
