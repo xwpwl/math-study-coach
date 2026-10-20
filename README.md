@@ -29,16 +29,12 @@ A Codex skill for ongoing math tutoring: resume from local records, learn in sma
 
 需要支持 skills 的 Codex，以及读取和写入学习目录的权限。下面的命令还需要 Git；也可使用 ZIP 安装。本技能本身没有额外的 Python 或 Node.js 依赖。
 
-安装位置为 `$CODEX_HOME/skills/math-study-coach`；未设置 `CODEX_HOME` 时，默认为 `~/.codex/skills/math-study-coach`。
+首次手动安装采用[当前官方文档](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)列出的用户级目录：`~/.agents/skills/math-study-coach`。如果已经安装，请先看下方兼容说明，确认客户端实际识别的位置。
 
 **Windows / PowerShell**
 
 ```powershell
-$studyCoachSkills = if ($env:CODEX_HOME) {
-    Join-Path $env:CODEX_HOME 'skills'
-} else {
-    Join-Path $env:USERPROFILE '.codex\skills'
-}
+$studyCoachSkills = Join-Path $env:USERPROFILE '.agents\skills'
 New-Item -ItemType Directory -Path $studyCoachSkills -Force | Out-Null
 git clone https://github.com/xwpwl/math-study-coach.git (Join-Path $studyCoachSkills 'math-study-coach')
 ```
@@ -46,9 +42,9 @@ git clone https://github.com/xwpwl/math-study-coach.git (Join-Path $studyCoachSk
 **macOS / Linux**
 
 ```sh
-study_coach_home="${CODEX_HOME:-$HOME/.codex}"
-mkdir -p "$study_coach_home/skills"
-git clone https://github.com/xwpwl/math-study-coach.git "$study_coach_home/skills/math-study-coach"
+study_coach_skills="$HOME/.agents/skills"
+mkdir -p "$study_coach_skills"
+git clone https://github.com/xwpwl/math-study-coach.git "$study_coach_skills/math-study-coach"
 ```
 
 以上命令用于首次安装，目标文件夹应尚不存在。已有安装时先检查其中是否有自己的修改。
@@ -56,6 +52,17 @@ git clone https://github.com/xwpwl/math-study-coach.git "$study_coach_home/skill
 **不用 Git：** 在本仓库页面点击 **Code → Download ZIP**，解压后将包含 `SKILL.md` 的文件夹重命名为 `math-study-coach`，放入上述 `skills` 目录。确保路径直接是 `math-study-coach/SKILL.md`，不要多套一层文件夹。
 
 安装后，在下一轮对话中调用技能；若未识别，重新打开 Codex 再试。
+
+**安装兼容性**
+
+- 官方主文档列出的用户级位置是 `~/.agents/skills`；[较早的官方教程](https://developers.openai.com/blog/eval-skills)仍使用 `~/.codex/skills`。
+- 本次检查的 Windows Codex 桌面会话确实在可用技能清单中列出了 `~/.codex/skills/math-study-coach`；本机内置安装器说明也使用 `$CODEX_HOME/skills`。这只能证明本环境的识别情况，不能推广到所有客户端和版本。
+- 客户端版本未能读取，记录为“未知”。macOS/Linux 安装尚未实机验证。检查日期：2026-10-20。
+- 已安装时沿用客户端实际识别的目录，不要同时在两个目录放置同名技能。安装或更新后，确认技能选择器或可用技能清单能找到 `math-study-coach`，并核对加载文件的位置。
+
+**更新已安装的技能**
+
+GitHub 仓库更新不会自动更新本机安装副本。若安装目录本身是 Git 克隆，先检查本地修改，再在该目录执行 `git pull --ff-only`。若通过 ZIP 或文件复制安装，先备份自己的修改，再从最新仓库同步 `SKILL.md`、`references/records.md` 和 `agents/openai.yaml`。学习目录中的四份个人档案不属于安装更新文件。
 
 ### 使用方法
 
@@ -111,6 +118,10 @@ $math-study-coach 继续学习，先接上次未完成的题，再检查到期�
 
 复习在你再次调用技能时处理，不会自动在后台提醒。技能默认只教数学；具体考试日期和大纲需要另行核实。仓库提供通用教学规则，不包含个人学习档案。
 
+### 验证范围
+
+安装路径的识别情况、格式校验和教学行为分别记录。跨上下文续学测试使用两个不继承父聊天历史的独立 Codex GPT 会话及合成档案，检查实际保存的四份文件。输入、快照和结果见[续学验证记录](tests/session-resume/REPORT.md)。该测试不等同于桌面界面重启或跨平台安装测试。
+
 ## English guide
 
 ### What it does
@@ -136,16 +147,12 @@ It tracks what the learner actually demonstrates, distinguishing independent ans
 
 Use a Codex installation that supports skills, with permission to read and write your chosen study folder. Git is needed for the commands below; downloading a ZIP is also supported. The skill itself has no additional Python or Node.js dependencies.
 
-Install into `$CODEX_HOME/skills/math-study-coach`, or `~/.codex/skills/math-study-coach` when `CODEX_HOME` is not set.
+For a new manual installation, use the user-level location in the [current official documentation](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills): `~/.agents/skills/math-study-coach`. For an existing installation, check the compatibility notes below before choosing a directory.
 
 **Windows / PowerShell**
 
 ```powershell
-$studyCoachSkills = if ($env:CODEX_HOME) {
-    Join-Path $env:CODEX_HOME 'skills'
-} else {
-    Join-Path $env:USERPROFILE '.codex\skills'
-}
+$studyCoachSkills = Join-Path $env:USERPROFILE '.agents\skills'
 New-Item -ItemType Directory -Path $studyCoachSkills -Force | Out-Null
 git clone https://github.com/xwpwl/math-study-coach.git (Join-Path $studyCoachSkills 'math-study-coach')
 ```
@@ -153,9 +160,9 @@ git clone https://github.com/xwpwl/math-study-coach.git (Join-Path $studyCoachSk
 **macOS / Linux**
 
 ```sh
-study_coach_home="${CODEX_HOME:-$HOME/.codex}"
-mkdir -p "$study_coach_home/skills"
-git clone https://github.com/xwpwl/math-study-coach.git "$study_coach_home/skills/math-study-coach"
+study_coach_skills="$HOME/.agents/skills"
+mkdir -p "$study_coach_skills"
+git clone https://github.com/xwpwl/math-study-coach.git "$study_coach_skills/math-study-coach"
 ```
 
 These commands are for a first installation; the destination folder should not already exist. Inspect an existing installation for your own changes before replacing it.
@@ -163,6 +170,17 @@ These commands are for a first installation; the destination folder should not a
 **Without Git:** Choose **Code → Download ZIP** on this repository page. Extract it, rename the folder containing `SKILL.md` to `math-study-coach`, and place it in your skills directory. The resulting path should be `math-study-coach/SKILL.md`, without an extra nested folder.
 
 Invoke the skill on your next turn after installation. If Codex does not recognize it, reopen Codex and try again.
+
+**Installation compatibility**
+
+- The current official documentation lists `~/.agents/skills` for user-level skills; an [earlier official tutorial](https://developers.openai.com/blog/eval-skills) uses `~/.codex/skills`.
+- The Windows Codex desktop session used for this check listed `~/.codex/skills/math-study-coach` among its available skills. Its bundled installer instructions also use `$CODEX_HOME/skills`. This is evidence about this environment, not a compatibility claim for every client and version.
+- The client version could not be retrieved and is recorded as unknown. Installation on macOS/Linux has not been tested on those systems. Checked on 2026-10-20.
+- Keep an existing installation in the directory your client recognizes. Avoid duplicate installations with the same skill name in both directories. After installing or updating, confirm that `math-study-coach` appears in the skill selector or available-skills list and check the loaded file location.
+
+**Updating an installed copy**
+
+Updating the GitHub repository does not automatically update your installed skill. If the installation directory is a Git clone, inspect local changes and then run `git pull --ff-only` inside that directory. For ZIP or copied installations, back up your customizations and sync `SKILL.md`, `references/records.md`, and `agents/openai.yaml` from the latest repository. The four personal records in your study folder are not installation files.
 
 ### How to use it
 
@@ -221,6 +239,10 @@ The default mastery check uses several distinct new questions and performance ac
 
 Reviews happen when you return to the skill; it does not send background reminders. It focuses on math. Official exam dates and syllabuses require separate verification. This repository contains reusable teaching rules, not personal study records.
 
+### Validation scope
+
+Installation discovery, format checks, and tutoring behavior are recorded separately. The context-handoff test uses two independent Codex GPT sessions without inherited parent-chat history and synthetic study records, then inspects the four files actually saved. See the [resume validation report](tests/session-resume/REPORT.md) for inputs, snapshots, and results. This is not a desktop UI restart test or a cross-platform installation test.
+
 ## 仓库结构 · Repository structure
 
 ```text
@@ -229,8 +251,9 @@ math-study-coach/
 ├── SKILL.md                  # 教学流程 / Tutoring instructions
 ├── agents/
 │   └── openai.yaml           # 技能展示信息 / Skill display metadata
-└── references/
-    └── records.md            # 档案和证据规则 / Record and evidence rules
+├── references/
+│   └── records.md            # 档案和证据规则 / Record and evidence rules
+└── tests/session-resume/     # 合成档案与行为验证 / Synthetic records and behavioral evidence
 ```
 
 教学流程见 [SKILL.md](SKILL.md)，记录约定见 [references/records.md](references/records.md)。
