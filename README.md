@@ -130,7 +130,12 @@ $math-study-coach 继续学习，先接上次未完成的题，再检查到期�
 
 ### 验证范围
 
-安装路径的识别情况、格式校验和教学行为分别记录。跨上下文续学测试使用两个不继承父聊天历史的独立 Codex GPT 会话及合成档案，检查实际保存的四份文件。输入、快照和结果见[续学验证记录](tests/session-resume/REPORT.md)。该测试不等同于桌面界面重启或跨平台安装测试。
+安装路径的识别情况、格式校验和教学行为分别记录：
+
+- [续学验证记录](tests/session-resume/REPORT.md)：两个不继承父聊天历史的独立 Codex GPT 会话，通过合成档案验证追问保存和简短补答恢复。
+- [首次使用验证记录](tests/first-use/REPORT.md)：三个独立 Codex GPT 会话、共六个教学回合，检查建档确认、学习目的与水平询问、教学策略调整，以及拒绝建档后的行为。三组目标行为检查通过；真实档案在测试期间未变化的独立检查未通过，复核情况和限制见报告。
+
+报告包含输入、实际回复和文件检查证据；这些单次场景测试不等同于桌面技能自动发现、界面重启、跨平台安装或长期可靠率验证。
 
 ## English guide
 
@@ -261,7 +266,12 @@ Reviews happen when you return to the skill; it does not send background reminde
 
 ### Validation scope
 
-Installation discovery, format checks, and tutoring behavior are recorded separately. The context-handoff test uses two independent Codex GPT sessions without inherited parent-chat history and synthetic study records, then inspects the four files actually saved. See the [resume validation report](tests/session-resume/REPORT.md) for inputs, snapshots, and results. This is not a desktop UI restart test or a cross-platform installation test.
+Installation discovery, format checks, and tutoring behavior are recorded separately:
+
+- [Resume validation report](tests/session-resume/REPORT.md): two independent Codex GPT sessions without inherited parent-chat history use synthetic records to check saved follow-up questions and recovery of a short answer.
+- [First-use validation report](tests/first-use/REPORT.md): three independent Codex GPT sessions, six tutoring turns in total, check consent to create records, questions about goals and current level, adapted teaching, and behavior when record creation is declined. The three target behavior checks passed; a separate check that real study files remained unchanged during the run did not pass. The report documents the follow-up audit and its limits.
+
+The reports include inputs, actual replies, and file evidence. These single-run scenarios do not validate automatic skill discovery, desktop UI restart, cross-platform installation, or long-term reliability.
 
 ## 仓库结构 · Repository structure
 
@@ -273,7 +283,9 @@ math-study-coach/
 │   └── openai.yaml           # 技能展示信息 / Skill display metadata
 ├── references/
 │   └── records.md            # 档案和证据规则 / Record and evidence rules
-└── tests/session-resume/     # 合成档案与行为验证 / Synthetic records and behavioral evidence
+└── tests/
+    ├── session-resume/      # 跨聊天续学验证 / Context-handoff validation
+    └── first-use/           # 首次使用验证 / First-use validation
 ```
 
 教学流程见 [SKILL.md](SKILL.md)，记录约定见 [references/records.md](references/records.md)。

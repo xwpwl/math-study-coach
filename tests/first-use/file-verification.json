@@ -1,0 +1,7 @@
+{
+  "RealRecordsUnchanged": false,
+  "CaseAExactFourRecords": true,
+  "CaseBExactFourRecords": true,
+  "SnapshotsMatch": true,
+  "CaseCNoFiles": true
+}
