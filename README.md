@@ -84,7 +84,7 @@ $math-study-coach 我想开始长期数学学习。请先检查当前目录；
 我的目标是补好基础并学习高数，每天能学数学 60 分钟。
 ```
 
-目标和时间可按实际情况修改。无记录时，默认从三道基础诊断题开始，检查因式分解、解二次方程和代入检验。
+目标和时间可按实际情况修改。也可以只输入 `$math-study-coach`：技能先检查当前目录，未找到学习档案时询问是否创建；缺少部分文件时询问是否补建，并保留已有记录。上面的示例已明确授权创建，因此不会重复询问。确认首次建档后，默认从三道基础诊断题开始，检查因式分解、解二次方程和代入检验。
 
 **2. 下次继续**
 
@@ -210,7 +210,7 @@ My goal is to build my algebra foundation and learn calculus.
 I can spend 60 minutes a day on math.
 ```
 
-Adjust the goal and time to your needs. With no existing records, the default diagnostic has three questions covering factorization, solving a quadratic by factoring, and checking a candidate root by substitution.
+Adjust the goal and time to your needs. You can also enter just `$math-study-coach`: it checks the current folder and asks whether to create study records if none are found. If only some files are missing, it asks whether to add them while preserving existing records. The example above explicitly authorizes creation, so no repeated confirmation is needed. After first-time setup is confirmed, the default diagnostic has three questions covering factorization, solving a quadratic by factoring, and checking a candidate root by substitution.
 
 **2. Resume later**
 
