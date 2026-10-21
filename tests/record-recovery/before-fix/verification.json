@@ -1,0 +1,51 @@
+{
+  "a_complete": {
+    "firstTurnCreatedFiles": [],
+    "firstTurnChangedExisting": [
+      "学习日志.md",
+      "学习档案.md"
+    ],
+    "secondTurnCreatedFiles": [],
+    "originalLogEventsPreserved": true,
+    "reviewDateRetained": true,
+    "snapshotMatchesLive": true,
+    "unrelatedK001CardUnchanged": true,
+    "sessionCountReview": "1 retained"
+  },
+  "b_missing_support": {
+    "firstTurnCreatedFiles": [],
+    "firstTurnChangedExisting": [],
+    "secondTurnCreatedFiles": [
+      "知识库.md",
+      "错题本.md"
+    ],
+    "originalLogEventsPreserved": true,
+    "reviewDateRetained": true,
+    "snapshotMatchesLive": true,
+    "sessionCountReview": "1 retained"
+  },
+  "c_missing_profile": {
+    "firstTurnCreatedFiles": [],
+    "firstTurnChangedExisting": [],
+    "secondTurnCreatedFiles": [
+      "学习档案.md"
+    ],
+    "originalLogEventsPreserved": true,
+    "reviewDateRetained": true,
+    "snapshotMatchesLive": true,
+    "unrelatedK001CardUnchanged": true,
+    "sessionCountReview": "1 -> 2 across different learning dates; old current-summary text not synchronized. New-session choice itself is inconclusive under current rules."
+  },
+  "d_missing_profile_same_day": {
+    "firstTurnCreatedFiles": [],
+    "firstTurnChangedExisting": [],
+    "secondTurnCreatedFiles": [
+      "学习档案.md"
+    ],
+    "originalLogEventsPreserved": true,
+    "reviewDateRetained": true,
+    "snapshotMatchesLive": true,
+    "unrelatedK001CardUnchanged": true,
+    "sessionCountReview": "1 retained"
+  }
+}

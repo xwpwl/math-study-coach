@@ -1,0 +1,50 @@
+[
+  {
+    "path": "a_complete/initial/学习日志.md",
+    "sha256": "4ab564d3c7bd7fa45cdaf80c5a7810ff10176e711b80c08ee0f21e552a46a876"
+  },
+  {
+    "path": "a_complete/initial/学习档案.md",
+    "sha256": "cf1185588693b7da83ea7c48234603b14af7baa4cbf79da1fd0173516141494d"
+  },
+  {
+    "path": "a_complete/initial/知识库.md",
+    "sha256": "82a2c65ce0e8d729f8e2376ffeec4f050e509fb824f127f9dbfc249c0a0c6576"
+  },
+  {
+    "path": "a_complete/initial/错题本.md",
+    "sha256": "374fe9b4ef298c1068ac08b068bd73bcd88d80a8bea21cdcb0bb020e6c6a1ee9"
+  },
+  {
+    "path": "b_missing_support/initial/学习日志.md",
+    "sha256": "4ab564d3c7bd7fa45cdaf80c5a7810ff10176e711b80c08ee0f21e552a46a876"
+  },
+  {
+    "path": "b_missing_support/initial/学习档案.md",
+    "sha256": "cf1185588693b7da83ea7c48234603b14af7baa4cbf79da1fd0173516141494d"
+  },
+  {
+    "path": "c_missing_profile/initial/学习日志.md",
+    "sha256": "4ab564d3c7bd7fa45cdaf80c5a7810ff10176e711b80c08ee0f21e552a46a876"
+  },
+  {
+    "path": "c_missing_profile/initial/知识库.md",
+    "sha256": "82a2c65ce0e8d729f8e2376ffeec4f050e509fb824f127f9dbfc249c0a0c6576"
+  },
+  {
+    "path": "c_missing_profile/initial/错题本.md",
+    "sha256": "374fe9b4ef298c1068ac08b068bd73bcd88d80a8bea21cdcb0bb020e6c6a1ee9"
+  },
+  {
+    "path": "d_missing_profile_same_day/initial/学习日志.md",
+    "sha256": "3bb658a197f48c1c3606380a41e8ac7a90ae90da936e630ed01720a01e115f5a"
+  },
+  {
+    "path": "d_missing_profile_same_day/initial/知识库.md",
+    "sha256": "f118492911c0158779c1ed2b89386f1b51fe238b7e80c3d35ec8d3f565451e8b"
+  },
+  {
+    "path": "d_missing_profile_same_day/initial/错题本.md",
+    "sha256": "aa5f5d103004d6b89a146b33420674b9047c68f5aa01d246abffafd5fbb8daa8"
+  }
+]

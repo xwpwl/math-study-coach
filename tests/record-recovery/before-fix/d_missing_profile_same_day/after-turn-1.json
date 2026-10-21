@@ -1,0 +1,30 @@
+{
+  "case": "d_missing_profile_same_day",
+  "stage": "after-turn-1",
+  "files": [
+    {
+      "name": "学习日志.md",
+      "existedInitially": true,
+      "existsAfter": true,
+      "unchanged": true,
+      "beforeSha256": "3bb658a197f48c1c3606380a41e8ac7a90ae90da936e630ed01720a01e115f5a",
+      "afterSha256": "3bb658a197f48c1c3606380a41e8ac7a90ae90da936e630ed01720a01e115f5a"
+    },
+    {
+      "name": "知识库.md",
+      "existedInitially": true,
+      "existsAfter": true,
+      "unchanged": true,
+      "beforeSha256": "f118492911c0158779c1ed2b89386f1b51fe238b7e80c3d35ec8d3f565451e8b",
+      "afterSha256": "f118492911c0158779c1ed2b89386f1b51fe238b7e80c3d35ec8d3f565451e8b"
+    },
+    {
+      "name": "错题本.md",
+      "existedInitially": true,
+      "existsAfter": true,
+      "unchanged": true,
+      "beforeSha256": "aa5f5d103004d6b89a146b33420674b9047c68f5aa01d246abffafd5fbb8daa8",
+      "afterSha256": "aa5f5d103004d6b89a146b33420674b9047c68f5aa01d246abffafd5fbb8daa8"
+    }
+  ]
+}

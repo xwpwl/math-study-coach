@@ -1,0 +1,22 @@
+{
+  "case": "b_missing_support",
+  "stage": "after-turn-1",
+  "files": [
+    {
+      "name": "学习日志.md",
+      "existedInitially": true,
+      "existsAfter": true,
+      "unchanged": true,
+      "beforeSha256": "4ab564d3c7bd7fa45cdaf80c5a7810ff10176e711b80c08ee0f21e552a46a876",
+      "afterSha256": "4ab564d3c7bd7fa45cdaf80c5a7810ff10176e711b80c08ee0f21e552a46a876"
+    },
+    {
+      "name": "学习档案.md",
+      "existedInitially": true,
+      "existsAfter": true,
+      "unchanged": true,
+      "beforeSha256": "cf1185588693b7da83ea7c48234603b14af7baa4cbf79da1fd0173516141494d",
+      "afterSha256": "cf1185588693b7da83ea7c48234603b14af7baa4cbf79da1fd0173516141494d"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "case": "c_missing_profile",
+  "stage": "after-turn-2",
+  "files": [
+    {
+      "name": "学习日志.md",
+      "existedInitially": true,
+      "existsAfter": true,
+      "unchanged": false,
+      "beforeSha256": "4ab564d3c7bd7fa45cdaf80c5a7810ff10176e711b80c08ee0f21e552a46a876",
+      "afterSha256": "e090d239aedaf6e788899fd612374ecb3da15df27c524ad8cc2a01df65c3c6d4"
+    },
+    {
+      "name": "学习档案.md",
+      "existedInitially": false,
+      "existsAfter": true,
+      "unchanged": false,
+      "beforeSha256": null,
+      "afterSha256": "4efc71b42ecb77188304a19d8e20e8c192740769832a3f0f7f4b361fd5535b03"
+    },
+    {
+      "name": "知识库.md",
+      "existedInitially": true,
+      "existsAfter": true,
+      "unchanged": true,
+      "beforeSha256": "82a2c65ce0e8d729f8e2376ffeec4f050e509fb824f127f9dbfc249c0a0c6576",
+      "afterSha256": "82a2c65ce0e8d729f8e2376ffeec4f050e509fb824f127f9dbfc249c0a0c6576"
+    },
+    {
+      "name": "错题本.md",
+      "existedInitially": true,
+      "existsAfter": true,
+      "unchanged": true,
+      "beforeSha256": "374fe9b4ef298c1068ac08b068bd73bcd88d80a8bea21cdcb0bb020e6c6a1ee9",
+      "afterSha256": "374fe9b4ef298c1068ac08b068bd73bcd88d80a8bea21cdcb0bb020e6c6a1ee9"
+    }
+  ]
+}

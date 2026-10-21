@@ -1,0 +1,44 @@
+{
+  "method": "机械核验仅检查字节、字符串和结构保留；计数语义、是否重复访谈和是否虚报完成另外逐轮阅读并独立复核。",
+  "checks": {
+    "initialHashesUnchanged": true,
+    "installedAndRepoStillMatchTestBaseline": true
+  },
+  "cases": {
+    "a_rebuild": {
+      "finalSnapshotMatchesLive": true,
+      "originalLogEventsBeforeSummaryPreserved": true,
+      "originalSummaryValuesPreserved": true,
+      "oldCurrentSummaryHeadingRemoved": true,
+      "historyMarkerAndMainProfileReferencePresent": true,
+      "unrelatedK001CardUnchanged": true,
+      "reviewDateRetained": true,
+      "originalWrongAnswerRetained": true,
+      "noMutationBeforeConsent": true,
+      "onlyProfileCreated": true,
+      "knowledgeAndErrorFilesByteUnchanged": true
+    },
+    "b_repair_existing": {
+      "finalSnapshotMatchesLive": true,
+      "originalLogEventsBeforeSummaryPreserved": true,
+      "originalSummaryValuesPreserved": true,
+      "oldCurrentSummaryHeadingRemoved": true,
+      "historyMarkerAndMainProfileReferencePresent": true,
+      "unrelatedK001CardUnchanged": true,
+      "reviewDateRetained": true,
+      "originalWrongAnswerRetained": true,
+      "exactlyOneNewAnswerEvent": true
+    },
+    "c_new_session": {
+      "finalSnapshotMatchesLive": true,
+      "originalLogEventsBeforeSummaryPreserved": true,
+      "originalSummaryValuesPreserved": true,
+      "oldCurrentSummaryHeadingRemoved": true,
+      "historyMarkerAndMainProfileReferencePresent": true,
+      "unrelatedK001CardUnchanged": true,
+      "reviewDateRetained": true,
+      "originalWrongAnswerRetained": true,
+      "exactlyOneNewAnswerEvent": true
+    }
+  }
+}

@@ -134,6 +134,7 @@ $math-study-coach 继续学习，先接上次未完成的题，再检查到期�
 
 - [续学验证记录](tests/session-resume/REPORT.md)：两个不继承父聊天历史的独立 Codex GPT 会话，通过合成档案验证追问保存和简短补答恢复。
 - [首次使用验证记录](tests/first-use/REPORT.md)：三个独立 Codex GPT 会话、共六个教学回合，检查建档确认、学习目的与水平询问、教学策略调整，以及拒绝建档后的行为。三组目标行为检查通过；真实档案在测试期间未变化的独立检查未通过，复核情况和限制见报告。
+- [档案恢复与会话汇总验证](tests/record-recovery/REPORT.md)：保留已有档案与部分缺档的四组原始测试及汇总冲突发现；修复后三组、六个回合检查通过，覆盖补建、已有冲突修复和明确新开会话后的作答。
 
 报告包含输入、实际回复和文件检查证据；这些单次场景测试不等同于桌面技能自动发现、界面重启、跨平台安装或长期可靠率验证。
 
@@ -270,6 +271,7 @@ Installation discovery, format checks, and tutoring behavior are recorded separa
 
 - [Resume validation report](tests/session-resume/REPORT.md): two independent Codex GPT sessions without inherited parent-chat history use synthetic records to check saved follow-up questions and recovery of a short answer.
 - [First-use validation report](tests/first-use/REPORT.md): three independent Codex GPT sessions, six tutoring turns in total, check consent to create records, questions about goals and current level, adapted teaching, and behavior when record creation is declined. The three target behavior checks passed; a separate check that real study files remained unchanged during the run did not pass. The report documents the follow-up audit and its limits.
+- [Record recovery and session summary validation](tests/record-recovery/REPORT.md): preserves four original scenarios and the summary inconsistency they exposed. Three post-fix scenarios, six turns in total, passed the target checks for rebuilding a missing profile, repairing existing conflicting summaries, and answering after an explicitly requested new session.
 
 The reports include inputs, actual replies, and file evidence. These single-run scenarios do not validate automatic skill discovery, desktop UI restart, cross-platform installation, or long-term reliability.
 
@@ -285,7 +287,8 @@ math-study-coach/
 │   └── records.md            # 档案和证据规则 / Record and evidence rules
 └── tests/
     ├── session-resume/      # 跨聊天续学验证 / Context-handoff validation
-    └── first-use/           # 首次使用验证 / First-use validation
+    ├── first-use/           # 首次使用验证 / First-use validation
+    └── record-recovery/     # 档案恢复与汇总回归 / Record recovery regression
 ```
 
 教学流程见 [SKILL.md](SKILL.md)，记录约定见 [references/records.md](references/records.md)。

@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "baselineCommit": "d95e9bbd7392bc29fd050b09af9a0be393af7491",
+  "synthetic": true,
+  "cases": [
+    {
+      "id": "a_rebuild",
+      "source": "previous c_missing_profile/initial; unchanged",
+      "turn1": "$math-study-coach 继续学习。",
+      "turn2": "可以补建学习档案，继续刚才那道题。",
+      "checks": [
+        "首轮询问补建且不重复背景访谈",
+        "同意后恢复主档及 ALG-S001，不以跨日或补建自动新增会话",
+        "主表和仍标当前的所有计数一致，旧快照明确标历史",
+        "旧题/原答/待补/复习安排保留，计数无虚增"
+      ]
+    },
+    {
+      "id": "b_repair_existing",
+      "source": "previous c_missing_profile/after-turn-2; only current study path relocated",
+      "turn1": "$math-study-coach 继续学习。",
+      "turn2": "2。先只批改这一步，不出新题。",
+      "checks": [
+        "已分配 ALG-S002 保留，next S003，不回退或再增会话",
+        "旧当前汇总不再与主表混淆；事件时点计数保留",
+        "第二轮 A003 后当前作答3，旧快照明确不作当前",
+        "不重复目标/水平访谈、不重置历史、不出新题"
+      ]
+    },
+    {
+      "id": "c_new_session",
+      "source": "previous a_complete/initial; unchanged",
+      "turn1": "$math-study-coach 昨天的学习已经结束。今天新开一次学习会话，继续上次未完成的题。",
+      "turn2": "2。先只批改这一步，不出新题。",
+      "checks": [
+        "明确新一轮时分配 ALG-S002并记录依据",
+        "会话2、next S003，所有当前汇总同步或改历史",
+        "第二轮只增 A003，不再新建会话/题目",
+        "已知目标/水平和原题/原答/复习保留"
+      ]
+    }
+  ]
+}
