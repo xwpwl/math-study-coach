@@ -25,6 +25,7 @@ A Codex skill for ongoing math tutoring: resume from local records, learn in sma
 **读取档案 → 接未答题或短复习 → 讲一个小点 → 等你作答 → 反馈与提示 → 订正 → 新题复测 → 保存进度**
 
 - **衔接进度：** 保存最后的追问、已答部分和待补部分，从未完成题目和到期复习继续。
+- **先了解你：** 首次学习先问学习目的和当前水平，据此调整起点、讲解方式、练习难度和复习重点；已有信息直接沿用，再根据实际作答调整。
 - **拆小讲解：** 没看懂就拆步骤；可以指定一道题或截图作为例子。
 - **调整题量：** 熟悉内容可约 8 题一批，新内容通常先 2～3 题，订正可只问一个关键点。
 - **理解日常输入：** 接受“平方、根号、乘”等表达，以及只补一个系数或缺项的回答；影响判断的歧义会先澄清。
@@ -82,9 +83,12 @@ GitHub 仓库更新不会自动更新本机安装副本。若安装目录本身�
 $math-study-coach 我想开始长期数学学习。请先检查当前目录；
 如果没有学习记录，就初始化档案并给我首次诊断题。
 我的目标是补好基础并学习高数，每天能学数学 60 分钟。
+我会解一次方程，但因式分解不太熟，导数还没学过。
 ```
 
-目标和时间可按实际情况修改。也可以只输入 `$math-study-coach`：技能先检查当前目录，未找到学习档案时询问是否创建；缺少部分文件时询问是否补建，并保留已有记录。上面的示例已明确授权创建，因此不会重复询问。确认首次建档后，默认从三道基础诊断题开始，检查因式分解、解二次方程和代入检验。
+目标、水平和时间可按实际情况修改。也可以只输入 `$math-study-coach`：技能先检查当前目录，未找到学习档案时询问是否创建；缺少部分文件时询问是否补建，并保留已有记录。上面的示例已明确授权创建，因此不会重复询问。
+
+首次教学前，技能会先了解你的学习目的和当前水平，只询问尚未提供的信息，再选择合适的诊断题与教学策略。如果不清楚自己的水平，可以直接说“不清楚”。不会统一从固定三题开始；你的自述用于选择起点，实际掌握情况由后续作答验证。已有档案续学时沿用已知信息，不反复问同样的问题。
 
 **2. 下次继续**
 
@@ -149,6 +153,7 @@ For learners who are willing to think for themselves but often get stuck on a st
 **Read records → Resume a question or review → Explain one concept → Wait for your answer → Give feedback and hints → Correct → Try fresh questions → Save progress**
 
 - **Resume reliably:** Save the exact follow-up question, answered parts, and remaining parts to continue unfinished work and reviews due.
+- **Start with your needs:** Ask about your learning purpose and current level before the first lesson, then adapt the starting point, explanations, practice difficulty, and review priorities. Reuse information already provided and adjust based on actual answers.
 - **Explain in small steps:** Reuse a question or screenshot you provide and break down confusing steps.
 - **Adjust the batch size:** Around eight familiar questions, two or three new or complex questions, or one correction at a time, depending on your preference.
 - **Accept everyday notation:** Understand expressions such as “x squared,” Chinese math terms, and partial corrections; clarify ambiguities that affect grading.
@@ -208,9 +213,12 @@ in this folder. Check for existing records first; if none exist,
 initialize the four study records and give me the initial diagnostic questions.
 My goal is to build my algebra foundation and learn calculus.
 I can spend 60 minutes a day on math.
+I can solve linear equations, but I am less confident with factorization and have not studied derivatives.
 ```
 
-Adjust the goal and time to your needs. You can also enter just `$math-study-coach`: it checks the current folder and asks whether to create study records if none are found. If only some files are missing, it asks whether to add them while preserving existing records. The example above explicitly authorizes creation, so no repeated confirmation is needed. After first-time setup is confirmed, the default diagnostic has three questions covering factorization, solving a quadratic by factoring, and checking a candidate root by substitution.
+Adjust the goal, level, and time to your needs. You can also enter just `$math-study-coach`: it checks the current folder and asks whether to create study records if none are found. If only some files are missing, it asks whether to add them while preserving existing records. The example above explicitly authorizes creation, so no repeated confirmation is needed.
+
+Before the first lesson, the skill asks about your learning purpose and current level, requesting only missing information, then chooses suitable diagnostic questions and a teaching approach. It is fine to say you are unsure of your level. There is no fixed three-question starting test for everyone: your self-assessment guides the starting point, while actual answers provide evidence of mastery. Later sessions reuse known information rather than repeating the same questions.
 
 **2. Resume later**
 
